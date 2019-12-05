@@ -25,15 +25,17 @@ before_script:
   - chmod +x ~/bin/gimme
   - ~/bin/gimme 1.12
   - source ~/.gimme/envs/go1.12.env
-  - sh "./tiny-firmware/protob/ci-scripts/install-${TRAVIS_OS_NAME}.sh" ;
+  - if [[ $TRAVIS_OS_NAME != 'windows' ]]; then
+    sh "./tiny-firmware/protob/ci-scripts/install-${TRAVIS_OS_NAME}.sh" ;
+    fi
   # Define env vars for Linux builds
   - if [[ $TRAVIS_OS_NAME == 'linux' ]]; then
     ls -l /usr/local/bin/protoc ;
     export CHECK_PATH="$(pwd)/check-0.12.0" ;
     export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${CHECK_PATH}/src" ;
     export PATH="/usr/local/bin:$(pwd)/protoc/bin:$PATH" ;
-    echo "PATH=$PATH";
-    echo "PIP=$PIP";
+    echo "PATH=$PATH" ;
+    echo "PIP=$PIP" ;
     fi
   # Define env vars for osx builds
   - if [[ $TRAVIS_OS_NAME == 'osx' ]]; then
@@ -56,9 +58,9 @@ before_script:
   # Install gcc 6 version, required for libskycoin
   #FIXME $TRAVIS_TAG != ''
   - if [[ $TRAVIS_TAG == 'osx' ]]; then
-    make setup-libskycoin;
-    ./tiny-firmware/vendor/libskycoin/ci-scripts/install-travis-gcc.sh;
-    eval "CC=gcc-6 && CXX=g++-6";
+    make setup-libskycoin ;
+    ./tiny-firmware/vendor/libskycoin/ci-scripts/install-travis-gcc.sh ;
+    eval "CC=gcc-6 && CXX=g++-6" ;
     fi
 
 script:
