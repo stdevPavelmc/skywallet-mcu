@@ -42,13 +42,13 @@ before_script:
     fi
   # define env vars for windows builds tree -L 3 --filelimit 100
   - if [[ $TRAVIS_OS_NAME == 'windows' ]]; then 
-    uname -a
-    cd /c/ && tree -L 3 --filelimit 100
+    uname -a ;
+    cd /c/ && tree -L 3 --filelimit 100 ;
     fi
   # Install OS-specific test and build dependencies
   - eval "./ci-scripts/install-${TRAVIS_OS_NAME}.sh"
   - if [[ $TRAVIS_OS_NAME == 'linux' ]]; then 
-    export PATH="/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH"
+    export PATH="/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH" ;
     fi
   # Install linters
   - make install-linters
