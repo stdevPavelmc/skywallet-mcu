@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 set +e
+
+# install msys2 using chocolatey
+choco install msys2
+
 pacman -Sy make gcc protobuf unzip python3-pip
 
 # There are no available packages for MSYS2, listed below

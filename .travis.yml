@@ -11,6 +11,9 @@ matrix:
     - os: osx
       env:
         - PYTHON=python3
+    - os: windows
+      # nothing yet
+
 env:
   global:
     - GOPATH: "$HOME/go"
