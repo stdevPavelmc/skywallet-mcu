@@ -4,19 +4,19 @@ set +e
 
 # this script is run by the git shell, not by the msys2 so we need to make a wrapper for run command inside
 # msys2 shell lite pacman installs, etc... 
-export shell="cmd.exe //C RefreshEnv.cmd & C:/tools/msys64/msys2_shell.cmd -defterm -mingw64 -no-start -full-path -here -c \$\* --"
+export msys2="cmd.exe //C RefreshEnv.cmd & C:/tools/msys64/msys2_shell.cmd -defterm -mingw64 -no-start -full-path -here -c \$\* --"
 
 # install msys2 using chocolatey
 choco install msys2
 
-$shell pacman -Sy make gcc protobuf unzip python3-pip tree
+$msys2 pacman -Sy make gcc protobuf unzip python3-pip tree
 
 # There are no available packages for MSYS2, listed below
 # To make them work under MSYS2, we need to move all files to MSYS2 /usr/
-$shell pacman -Sy mingw-w64-x86_64-check
-$shell pacman -Sy mingw-w64-x86_64-SDL2
-$shell pacman -Sy mingw-w64-x86_64-protobuf-c
-$shell pacman -Sy mingw-w64-x86_64-clang
+$msys2 pacman -Sy mingw-w64-x86_64-check
+$msys2 pacman -Sy mingw-w64-x86_64-SDL2
+$msys2 pacman -Sy mingw-w64-x86_64-protobuf-c
+$msys2 pacman -Sy mingw-w64-x86_64-clang
 set -e && echo "If u got error"
 
 # debug the fylesystem structure on travis
