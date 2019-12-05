@@ -20,7 +20,7 @@ $msys2 pacman -Sy --noconfirm mingw-w64-x86_64-clang
 set -e && echo "If u got error"
 
 # debug the fylesystem structure on travis
-$msys2 tree -L 3 --filelimit 100
+$msys2 tree -L 3 --filelimit 100 /c/tools/
 
 echo "Successfully installed all tools"
 
