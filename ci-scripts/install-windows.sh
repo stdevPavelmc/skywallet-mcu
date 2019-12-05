@@ -5,13 +5,14 @@ set +e
 # install msys2 using chocolatey
 choco install msys2
 
-pacman -Sy make gcc protobuf unzip python3-pip
+pacman -Sy make gcc protobuf unzip python3-pip tree
 
 # There are no available packages for MSYS2, listed below
 # To make them work under MSYS2, we need to move all files to MSYS2 /usr/
 pacman -Sy mingw-w64-x86_64-check
 pacman -Sy mingw-w64-x86_64-SDL2
 pacman -Sy mingw-w64-x86_64-protobuf-c
+pacman -Sy mingw-w64-x86_64-clang
 set -e && echo "If u got error"
 
 echo "Successfully installed all tools"
