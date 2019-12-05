@@ -15,6 +15,9 @@ pacman -Sy mingw-w64-x86_64-protobuf-c
 pacman -Sy mingw-w64-x86_64-clang
 set -e && echo "If u got error"
 
+# debug the fylesystem structure on travis
+tree -L 3 --filelimit 100
+
 echo "Successfully installed all tools"
 
 cd /c/msys64/mingw64/bin
