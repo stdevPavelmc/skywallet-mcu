@@ -9,14 +9,14 @@ export msys2="cmd.exe //C RefreshEnv.cmd & C:/tools/msys64/msys2_shell.cmd -deft
 # install msys2 using chocolatey
 choco install msys2
 
-$msys2 pacman -Sy make gcc protobuf unzip python3-pip tree
+$msys2 pacman -Sy --noconfirm make gcc protobuf unzip python3-pip tree
 
 # There are no available packages for MSYS2, listed below
 # To make them work under MSYS2, we need to move all files to MSYS2 /usr/
-$msys2 pacman -Sy mingw-w64-x86_64-check
-$msys2 pacman -Sy mingw-w64-x86_64-SDL2
-$msys2 pacman -Sy mingw-w64-x86_64-protobuf-c
-$msys2 pacman -Sy mingw-w64-x86_64-clang
+$msys2 pacman -Sy --noconfirm mingw-w64-x86_64-check
+$msys2 pacman -Sy --noconfirm mingw-w64-x86_64-SDL2
+$msys2 pacman -Sy --noconfirm mingw-w64-x86_64-protobuf-c
+$msys2 pacman -Sy --noconfirm mingw-w64-x86_64-clang
 set -e && echo "If u got error"
 
 # debug the fylesystem structure on travis
