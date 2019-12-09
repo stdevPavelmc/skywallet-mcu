@@ -46,7 +46,7 @@ before_script:
   - if [[ $TRAVIS_OS_NAME == 'windows' ]]; then uname -a ; fi
   # Install OS-specific test and build dependencies
   - eval "./ci-scripts/install-${TRAVIS_OS_NAME}.sh"
-  - if [[ $TRAVIS_OS_NAME == 'linux' ]]; then 
+  - if [[ $TRAVIS_OS_NAME == 'linux' ]]; then
     export PATH="/opt/gcc-arm-none-eabi-6-2017-q2-update/bin:$PATH" ;
     fi
   # Install linters
