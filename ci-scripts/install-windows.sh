@@ -16,7 +16,6 @@ choco install pip
 choco install gcc-arm-embedded
 choco install gcc-arm
 choco install cppcheck
-choco install llvm
 
 # get and install SDL2
 curl http://libsdl.org/release/SDL2-devel-2.0.10-mingw.tar.gz
